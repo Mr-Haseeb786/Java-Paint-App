@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+   <left>
+      <AnchorPane prefHeight="550.0" prefWidth="196.0" style="-fx-background-color: #d3d3d3;" BorderPane.alignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <children>
+            <Line endX="98.99998474121094" layoutX="101.0" layoutY="137.0" startX="-93.66666412353516" stroke="#96909082" />
+            <Line endX="98.99998474121094" layoutX="102.0" layoutY="299.0" startX="-93.66666412353516" stroke="#96909082" />
+            <Line endX="98.99998474121094" layoutX="102.0" layoutY="420.0" startX="-93.66666412353516" stroke="#96909082" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="74.0" layoutY="-1.0" prefHeight="30.0" prefWidth="59.0" text="Shapes">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="138.0" prefHeight="30.0" prefWidth="111.0" text="Tools &amp; Brushes">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="307.0" prefHeight="30.0" prefWidth="93.0" text="Stroke Colors">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="convertBtn" layoutX="42.0" layoutY="467.0" mnemonicParsing="false" onAction="#convertTo3d" prefHeight="33.0" prefWidth="118.0" style="-fx-background-color: #adadc9;" text="Convert to 3D">
+               <font>
+                  <Font name="SansSerif Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Rectangle fx:id="squareShape" arcHeight="5.0" arcWidth="5.0" fill="#c7daeb" height="24.0" layoutX="20.0" layoutY="47.0" onMouseClicked="#sqShape" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.3" width="24.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Rectangle>
+            <Rectangle fx:id="rectShape" arcHeight="5.0" arcWidth="5.0" fill="#c7daeb" height="24.0" layoutX="58.0" layoutY="47.0" onMouseClicked="#rectShape" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.3" width="32.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Rectangle>
+            <Circle fx:id="circShape" fill="#c7daeb" layoutX="118.0" layoutY="59.0" onMouseClicked="#circleShape" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.3">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Ellipse fx:id="ellipseShape" fill="#c7daeb" layoutX="166.0" layoutY="59.0" onMouseClicked="#ellipseShape" radiusX="17.0" radiusY="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.3">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Ellipse>
+            <ColorPicker fx:id="colorPicker" layoutX="29.0" layoutY="353.0" onAction="#chooseColor" prefHeight="43.0" prefWidth="133.0" promptText="Choose Color" style="-fx-background-color: #adadc9;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ColorPicker>
+            <ImageView fx:id="pBrush" fitHeight="24.0" fitWidth="24.0" layoutX="32.0" layoutY="192.0" onMouseClicked="#selectBrush" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@paint-brush.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="pencil" fitHeight="30.0" fitWidth="31.0" layoutX="69.0" layoutY="189.0" onMouseClicked="#selectPencil" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pencil.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="marker" fitHeight="34.0" fitWidth="18.0" layoutX="118.0" layoutY="190.0" onMouseClicked="#selectMarker" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@marker.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Slider fx:id="slider" layoutX="26.0" layoutY="253.0" max="50.0" min="1.0" onDragDetected="#setStroke">
+               <cursor>
+                  <Cursor fx:constant="W_RESIZE" />
+               </cursor>
+            </Slider>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="264.0" prefHeight="22.0" prefWidth="108.0" text="Stroke Width">
+               <font>
+                  <Font name="SansSerif Regular" size="10.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="eraser" fitHeight="34.0" fitWidth="18.0" layoutX="154.0" layoutY="195.0" onMouseClicked="#selectEraser" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@eraser.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ColorPicker fx:id="shapeColorPicker" layoutX="92.0" layoutY="95.0" prefHeight="29.0" prefWidth="90.0" promptText="Choose Color" style="-fx-background-color: #adadc9;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ColorPicker>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="100.0" prefHeight="22.0" prefWidth="64.0" text="Fill Color:">
+               <font>
+                  <Font name="SansSerif Regular" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="551.0" prefWidth="829.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="canvas" height="551.0" layoutX="-2.0" layoutY="-1.0" onMouseDragged="#canvasMouseDrag" onMousePressed="#canvasMousePressed" onMouseReleased="#canvasMouseReleased" width="825.0">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor></Canvas>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
